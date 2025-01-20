@@ -1,0 +1,38 @@
+[project]
+name = "infomaniak-podcast-transcript"
+version = "0.1.0"
+description = "Tool that use infomaniak API to transcript audios and use LLM to do summary"
+authors = [
+    { name = "BLANC SWAN Infomaniak Ai Team" }
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "streamlit (>=1.41.1,<2.0.0)"
+]
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^4.0.0"
+black = "^24.10.0"
+isort = "^5.13.2"
+flake8 = "^7.1.1"
+codespell = "^2.3.0"
+autoflake = "^2.3.1"
+locust = "^2.32.5"
+
+[tool.black]
+line_length = 120
+preview = true
+enable-unstable-feature = ['string_processing']
+
+[tool.isort]
+profile = "black"
